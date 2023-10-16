@@ -1,14 +1,22 @@
 import time
 def move_forward():
     print("Робот движется вперед")
-    #например GPIO.output(motor1_pin1, GPIO.HIGH)
-    time.sleep(2)  # Робот движется вперед в течение 2 секунд
+    for duty_cycle in range(0, 101, 10):  # Постепенное увеличение скорости
+        print("скорость: ",duty_cycle)
+        # Здесь команда на шим контроллер например типа *.*(duty_cycle)
+        time.sleep(1)
+
+
     stop_motors()
+
+
 
 def move_backward():
     print("Робот движется назад")
-    time.sleep(2)
-    #например GPIO.output(motor2_pin1, GPIO.HIGH)
+    for duty_cycle in range(0, 101, 10):  # Постепенное увеличение скорости
+        print("скорость: ", duty_cycle)
+        # Здесь команда на шим контроллер например типа *.*(duty_cycle)
+        time.sleep(1)
     stop_motors()
 
 def stop_motors():
